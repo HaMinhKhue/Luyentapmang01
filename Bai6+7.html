@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text"size="4" id="0">
+<input type="text"size="4"id="1">
+<input type="text"size="4"id="2">
+<input type="text"size="4"id="3">
+<input type="text"size="4"id="4">
+<input type="text"size="4"id="5">
+<input type="text"size="4"id="6">
+<input type="text"size="4"id="7">
+<input type="text"size="4"id="8">
+<input type="text"size="4"id="9"><br><br>
+Enter V number:<input type="text"id="10">
+<button onclick="exercute()">Investigate 'V'</button>
+<div id="result"></div>
+<script>
+    integer=new Array(10)
+    function exercute() {
+        v = parseInt(document.getElementById('10').value)
+        for (i = 0; i < integer.length; i++) {
+            integer[i] = parseInt(document.getElementById(i).value)
+        }
+        if (integer.includes(v)) {
+            alert('V thuộc mảng')
+            j = integer.length - 1
+            for (i = 0; i < integer.length; i++) {
+                if (integer[i] === v) {
+                    integer.splice(i, 1)
+                    integer[j] = 0;
+                    j--
+                }
+            }
+            alert('Đã xóa V => mảng biến thành: ' + integer)
+        }else {alert('V không thuộc mảng')}
+    }
+</script>
+</body>
+</html>

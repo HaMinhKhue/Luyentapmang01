@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    integer=[]
+    for (i=0;i<10;i++){
+        integer[i]=parseInt(prompt('Enter an integer'))
+        first=0;last=integer.length-1
+        for(first=0;first<last;first++){
+            m=integer[first]
+            integer[first]=integer[last]
+            integer[last]=m
+            last--
+        }
+    }
+
+    document.write('Mảng đảo ngược là '+integer)
+</script>
+</body>
+</html>
